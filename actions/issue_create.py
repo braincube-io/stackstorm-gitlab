@@ -27,4 +27,4 @@ class GitlabIssueCreate(Action):
         issue = project.issues.create({ 'title': title, 'description': description, 'assignee_ids': assignee_ids,
                                         'labels': labels, 'epic_id': epic_id, 'due_date': due_date, 'weight': weight})
 
-        return (True, issue)
+        return (True, issue.to_json(sort_keys=True, indent=4))

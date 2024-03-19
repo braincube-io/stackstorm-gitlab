@@ -3,7 +3,6 @@
 from st2common.runners.base_action import Action
 import gitlab
 
-
 class GitlabEpicCreate(Action):
 
     # Retrieve config information
@@ -12,7 +11,7 @@ class GitlabEpicCreate(Action):
         self.url = self.config.get('url')
         self.token = self.config.get('token')
 
-    def run(self, group_id, title, labels, description, start_date, due_date, token):
+    def run(self, group_id, title, labels=[], description='', start_date=None, due_date=None, token=None):
 
         # Use user token if given
         token = token or self.token
@@ -29,4 +28,4 @@ class GitlabEpicCreate(Action):
 
         # Create new epic
         epic = group.epics.create({'title': title, 'description': description, 'labels': labels, 'start_date_fixed': start_date, 'start_date_is_fixed': start_date_is_fixed, 'due_date_fixed': due_date, 'due_date_is_fixed': due_date_is_fixed})
-        return (True, epic)
+        return (True, epic.to_json(sort_keys=True, indent=4))

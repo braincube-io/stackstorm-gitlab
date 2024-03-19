@@ -27,8 +27,8 @@ parameters:
     type: string
     position: 3
   labels:
-    description: "The comma-separated list of labels"
-    type: string
+    description: "List of labels"
+    type: array
     position: 4
   epic_id:
     description: "The ID of the epic to which the issue should be linked"
