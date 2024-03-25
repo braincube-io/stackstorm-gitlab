@@ -17,7 +17,7 @@ parameters:
     description: List of labels for the Epic.
     type: array
     required: false
-  gitlab_token:
+  token:
     description: GitLab personal access token.
     type: string
     required: false

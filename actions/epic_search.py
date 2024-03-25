@@ -12,10 +12,10 @@ class GitlabEpicSearch(Action):
         self.url = self.config.get('url')
         self.token = self.config.get('token')
 
-    def run(self, group_id, title='', labels=[], gitlab_token=None):
+    def run(self, group_id, title='', labels=[], token=None):
 
         # Use user token if given
-        token = gitlab_token or self.token
+        token = token or self.token
 
         # Initiate GitLab instance
         gl = gitlab.Gitlab(self.url, token)

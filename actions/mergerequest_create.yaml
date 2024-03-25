@@ -1,0 +1,34 @@
+---
+name: mergerequest.create
+description: This action create a merge request.
+entry_point: mergerequest_create.py
+runner_type: python-script
+parameters:
+  project_id:
+    description: The ID of the project in which to create the merge request
+    type: integer
+    required: true
+  source_branch:
+    description: Git source branch where the merge request is from
+    type: string
+    required: true
+  target_branch:
+    description: Git target branch where the merge request will be merged
+    type: string
+    required: true
+  title:
+    description: The merge request title
+    type: string
+    required: true
+  description:
+    description: The merge request description
+    type: string
+    required: false
+  remove_source_branch:
+    description: Delete source branch after merge
+    type: boolean
+    required: false
+  token:
+    description: GitLab personal access token.
+    type: string
+    required: false

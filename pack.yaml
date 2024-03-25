@@ -3,7 +3,7 @@ name: gitlab
 description: GitLab Rest API
 keywords:
   - gitlab
-version: 1.2.0
+version: 1.3.0
 author: Daniel Chamot
 email: daniel@nullkarma.com
 python_versions:
