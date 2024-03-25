@@ -19,8 +19,8 @@ parameters:
     required: true
     position: 1
   labels:
-    description: "The comma-separated list of labels"
-    type: string
+    description: "List of labels"
+    type: array
     position: 2
   description:
     description: "The description of the epic. Limited to 1,048,576 characters."

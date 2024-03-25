@@ -1,0 +1,23 @@
+---
+name: epic.search
+description: This action search if an Epic with specified elements exists in a GitLab project.
+  If the Epic exists, it returns its ID. If not, return False.
+entry_point: epic_search.py
+runner_type: python-script
+parameters:
+  group_id:
+    description: The ID of the GitLab group.
+    type: string
+    required: true
+  title:
+    description: The title of the Epic.
+    type: string
+    required: false
+  labels:
+    description: List of labels for the Epic.
+    type: array
+    required: false
+  gitlab_token:
+    description: GitLab personal access token.
+    type: string
+    required: false
