@@ -1,0 +1,26 @@
+---
+name: file.get.content
+description: This action get content of a git repository file.
+entry_point: file_get_content.py
+runner_type: python-script
+parameters:
+  project_id:
+    description: The ID of the project in which to get the file
+    type: integer
+    required: true
+  file_path:
+    description: Git file path
+    type: string
+    required: true
+  branch:
+    description: Git branch where file need to be get
+    type: string
+    required: false
+  decode_encoding:
+    description: get a decoded content with this encoding code or return a base64 content
+    type: string
+    required: false
+  token:
+    description: GitLab personal access token.
+    type: string
+    required: false

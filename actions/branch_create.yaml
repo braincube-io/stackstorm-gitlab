@@ -1,0 +1,22 @@
+---
+name: branch.create
+description: This action create a git branch.
+entry_point: branch_create.py
+runner_type: python-script
+parameters:
+  project_id:
+    description: The ID of the project in which to save the file
+    type: integer
+    required: true
+  branch:
+    description: Git new branch name
+    type: string
+    required: true
+  ref_branch:
+    description: Git reference branch name where the new branch will be created
+    type: string
+    required: true
+  token:
+    description: GitLab personal access token.
+    type: string
+    required: false

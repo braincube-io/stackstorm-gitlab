@@ -1,0 +1,26 @@
+---
+name: file.save.content
+description: This action save content of git repository files.
+entry_point: file_save_content.py
+runner_type: python-script
+parameters:
+  project_id:
+    description: The ID of the project in which to save the file
+    type: integer
+    required: true
+  files_to_modify:
+    description: List of dictionaries, each containing 'file_path' and 'content' keys representing files to modify.
+    type: array
+    required: true
+  commit_message:
+    description: Git commit
+    type: string
+    required: true
+  branch:
+    description: Git branch where file need to be save
+    type: string
+    required: true
+  token:
+    description: GitLab personal access token.
+    type: string
+    required: false
