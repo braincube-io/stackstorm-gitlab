@@ -1,3 +1,13 @@
+## v1.3.0
+
+* Add new `branch.create` action
+* Add new `file.get.content` action
+* Add new `file.save.content` action
+
+## v1.2.0
+
+* Add new `epic.search` and fix json output
+
 ## v1.1.2
 
 * New action `issue.create`
