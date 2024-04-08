@@ -15,6 +15,7 @@ verify_ssl: False
 ### Epics
 
 * `epic.create` - Create new Epic
+* `epic.search` - Search Epic
 
 ### Projects
 
@@ -29,3 +30,12 @@ verify_ssl: False
 
 * `pipeline.list` - List all pipelines in a project
 * `pipeline.trigger` - Create a new pipeline
+
+### Branches
+
+* `branch.create` - Create a new branch
+
+### Files
+
+* `file.get.content` - Get file content
+* `file.save.content` - Commit a new file content
