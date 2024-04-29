@@ -16,8 +16,12 @@ parameters:
     description: Git branch where file need to be get
     type: string
     required: false
+  decode:
+    description: Get a plain text (decoded) or a base64 content
+    type: boolean
+    required: false
   decode_encoding:
-    description: get a decoded content with this encoding code or return a base64 content
+    description: Encoding content
     type: string
     required: false
   token:

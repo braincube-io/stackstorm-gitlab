@@ -1,3 +1,8 @@
+## v1.3.1
+
+* Possibility to get base64 files with `file.get.content` action
+* Possibility to save base64 encoded files `file.save.content` action
+
 ## v1.3.0
 
 * Add new `branch.create` action

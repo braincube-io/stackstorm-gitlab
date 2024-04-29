@@ -9,7 +9,7 @@ parameters:
     type: integer
     required: true
   files_to_modify:
-    description: List of dictionaries, each containing 'file_path' and 'content' keys representing files to modify.
+    description: List of dictionaries, each containing 'file_path' and 'content' keys representing files to modify, you can also add an optional 'encoding' key to determine how the file will be stored.
     type: array
     required: true
   commit_message:

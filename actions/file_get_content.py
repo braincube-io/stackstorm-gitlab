@@ -13,7 +13,7 @@ class GitlabFileGetContent(Action):
         self.url = self.config.get('url')
         self.token = self.config.get('token')
 
-    def run(self, project_id, file_path, branch='main', decode_encoding='utf-8', token=None):
+    def run(self, project_id, file_path, branch='main', decode=True, decode_encoding='utf-8', token=None):
 
         # Use user token if given
         token = token or self.token
@@ -26,6 +26,11 @@ class GitlabFileGetContent(Action):
 
         f = project.files.get(file_path, ref=branch)
 
+        # early return base64 content
+        if not bool(decode):
+            return (True, f.content)
+
+        # or return a decoded string with an optional encoding
         if bool(decode_encoding):
             return (True, base64.b64decode(f.content).decode(decode_encoding) )
         else:
