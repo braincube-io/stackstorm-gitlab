@@ -39,7 +39,7 @@ class GitlabFileSaveContent(Action):
         project = gl.projects.get(project_id)
 
         # Generating commit actions
-        commit_actions = list(map(lambda file_info: {'action': 'update', 'file_path': file_info['file_path'], 'content': file_info['content']}, files_to_modify))
+        commit_actions = list(map(lambda file_info: {'action': 'update', 'file_path': file_info['file_path'], 'content': file_info['content'], 'encoding': file_info['encoding'] if 'encoding' in file_info else 'text'}, files_to_modify))
 
         # Prepare commit command
         commit_create = {
